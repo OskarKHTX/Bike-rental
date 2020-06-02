@@ -15,9 +15,6 @@ A full fledged bike rental system implemented in Python using object oriented pr
 * display available inventory
 * take requests on hourly, daily and weekly basis by cross verifying stock
   
-Since classes are used various customers and bike rental shops can be instantiated as needed.
-
-For simplicity we assume that any customer requests rentals of only one type i.e hourly, monthly or weekly but is free to chose the number of bikes he/she wants. However requested bikes should be less than available stock.
 
 ## How to run?
 This code is written in python3.6.
