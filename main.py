@@ -1,3 +1,4 @@
+import sqlite3
 from bikeRental import BikeRental, Customer
 from os import system, name
 from time import sleep as sleep
