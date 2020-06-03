@@ -1,7 +1,8 @@
 import sqlite3
 from bikeRental import BikeRental, Customer
-from os import system, name
-from time import sleep as sleep
+from os import system, name, path
+from time import sleep
+from dbmanager import createdb
 
 
 #clear function clears the terminal output from earlier outputs
@@ -67,6 +68,11 @@ def startshop():
 
 def main():
     clear()
+    if path.exists('users.db') == True:
+        pass
+    else:
+        createdb()
+
     while True:
         
         print("""
