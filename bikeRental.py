@@ -1,4 +1,5 @@
 import datetime
+from time import sleep
 
 class BikeRental:
     
@@ -13,8 +14,9 @@ class BikeRental:
         """
         Displays the bikes currently available for rent in the shop.
         """
-
+        clear()
         print("We have currently {} bikes available to rent.".format(self.stock))
+        sleep(2)
         return self.stock
 
     def rentBikeOnHourlyBasis(self, n):

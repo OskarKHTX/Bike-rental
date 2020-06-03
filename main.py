@@ -15,56 +15,57 @@ def clear():
 users = ["test"]
 
 def startshop():
-    shop = BikeRental(100)
-    customer = Customer()
-    print("""
-        ====== Bike Rental Shop =======
-        1. Display available bikes
-        2. Request a bike on hourly basis $5
-        3. Request a bike on daily basis $20
-        4. Request a bike on weekly basis $60
-        5. Return a bike
-        6. Exit
-        """)
-        
-    choice = input("Enter choice: ")
-        
-    try:
-        choice = int(choice)
-    except ValueError:
-        print("That's not an int!")
-        pass
-    
-    if choice == 1:
-        shop.displaystock()
-    
-    elif choice == 2:
-        customer.rentalTime = shop.rentBikeOnHourlyBasis(customer.requestBike())
-        customer.rentalBasis = 1
-
-    elif choice == 3:
-        customer.rentalTime = shop.rentBikeOnDailyBasis(customer.requestBike())
-        customer.rentalBasis = 2
-
-    elif choice == 4:
-        customer.rentalTime = shop.rentBikeOnWeeklyBasis(customer.requestBike())
-        customer.rentalBasis = 3
-
-    elif choice == 5:
-        customer.bill = shop.returnBike(customer.returnBike())
-        customer.rentalBasis, customer.rentalTime, customer.bikes = 0,0,0        
-    elif choice == 6:
-        clear()
+    while 1 == True:
+        shop = BikeRental(100)
+        customer = Customer()
         print("""
             ====== Bike Rental Shop =======
-            Thank you for using the bike rental system.
+            1. Display available bikes
+            2. Request a bike on hourly basis $5
+            3. Request a bike on daily basis $20
+            4. Request a bike on weekly basis $60
+            5. Return a bike
+            6. Exit
             """)
-        sleep(2)
-        clear()
-        exit()
-    else:
-            print("Invalid input. Please enter number between 1-6 ")        
-    
+            
+        choice = input("Enter choice: ")
+            
+        try:
+            choice = int(choice)
+        except ValueError:
+            print("That's not an int!")
+            pass
+        
+        if choice == 1:
+            shop.displaystock()
+        
+        elif choice == 2:
+            customer.rentalTime = shop.rentBikeOnHourlyBasis(customer.requestBike())
+            customer.rentalBasis = 1
+
+        elif choice == 3:
+            customer.rentalTime = shop.rentBikeOnDailyBasis(customer.requestBike())
+            customer.rentalBasis = 2
+
+        elif choice == 4:
+            customer.rentalTime = shop.rentBikeOnWeeklyBasis(customer.requestBike())
+            customer.rentalBasis = 3
+
+        elif choice == 5:
+            customer.bill = shop.returnBike(customer.returnBike())
+            customer.rentalBasis, customer.rentalTime, customer.bikes = 0,0,0        
+        elif choice == 6:
+            clear()
+            print("""
+                ====== Bike Rental Shop =======
+                Thank you for using the bike rental system.
+                """)
+            sleep(2)
+            clear()
+            exit()
+        else:
+                print("Invalid input. Please enter number between 1-6 ")        
+        
 
 def main():
     clear()
@@ -140,9 +141,9 @@ def main():
             ====== Bike Rental Shop =======
             Invalid username
             """)
-                sleep(2)
+                sleep(1)
                 clear()
-                pass
+                main()
 
         if option == 3:
             clear()
