@@ -1,6 +1,13 @@
 import datetime
 from time import sleep
 
+#clear function clears the terminal output from earlier outputs
+def clear():
+    if name == 'nt':
+        _ = system('cls')
+    else:
+        _ =system('clear')
+
 class BikeRental:
     
     def __init__(self,stock=0):

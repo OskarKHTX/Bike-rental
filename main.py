@@ -2,7 +2,7 @@ import sqlite3
 from bikeRental import BikeRental, Customer
 from os import system, name, path
 from time import sleep
-from dbmanager import createdb
+from dbmanager import createdb, adduser, login, cu
 
 
 #clear function clears the terminal output from earlier outputs
@@ -107,7 +107,8 @@ def main():
 
             username = input()
 
-            if username in users:
+
+            if cu(username) == False:
                 clear()
                 print("""
                 ====== Bike Rental Shop =======
@@ -116,9 +117,9 @@ def main():
                 """)
                 sleep(2)
                 clear()
-                continue
+                continue1
             else:
-                users.append(username)
+                adduser(username,0,0,0,0)
                 sleep(2)
                 clear()
                 continue
@@ -131,7 +132,7 @@ def main():
             """)
 
             username = input()
-            if username in users:
+            if cu(username) == True:
                 sleep(2)
                 clear()
                 startshop()
