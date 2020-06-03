@@ -1,5 +1,6 @@
 import datetime
 from time import sleep
+from os import system, name, path
 
 #clear function clears the terminal output from earlier outputs
 def clear():

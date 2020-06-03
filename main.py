@@ -1,6 +1,6 @@
 import sqlite3
+import random
 from bikeRental import BikeRental, Customer
-from os import system, name, path
 from time import sleep
 from dbmanager import createdb, adduser, login, cu
 
@@ -11,8 +11,6 @@ def clear():
         _ = system('cls')
     else:
         _ =system('clear')
-
-users = ["test"]
 
 def startshop():
     while 1 == True:
@@ -117,7 +115,7 @@ def main():
                 """)
                 sleep(2)
                 clear()
-                continue1
+                continue
             else:
                 adduser(username,0,0,0,0)
                 sleep(2)
@@ -132,7 +130,7 @@ def main():
             """)
 
             username = input()
-            if cu(username) == True:
+            if cu(username) == False:
                 sleep(2)
                 clear()
                 startshop()

@@ -1,4 +1,6 @@
 import sqlite3 as db
+import random
+from os import system, name, path
 conn = db.connect("users.db")
 c = db.Cursor
 
@@ -23,13 +25,14 @@ def login(username, passwd):
     test = c.execute(sql, (username ,passwd))
     stout = test.fetchall()
     stout = str(stout)[1:-1] 
-    print(stout)
+    #print(stout)
+    conn.close()
 
 
     if "," not in stout:
         return True
     else:
-        return True
+        return False
 
 def cu(username):
     conn = db.connect("users.db")
@@ -38,8 +41,9 @@ def cu(username):
     test = c.execute(sql, (username,))
     stout = test.fetchall()
     stout = str(stout)[1:-1] 
+    conn.close()
 
     if "," not in stout:
         return True
     else:
-        return True
+        return False

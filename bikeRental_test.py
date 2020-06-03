@@ -1,6 +1,7 @@
 import unittest
 from datetime import datetime, timedelta
 from bikeRental import BikeRental, Customer
+from os import system, name, path
 
 
 class BikeRentalTest(unittest.TestCase):
