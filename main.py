@@ -1,6 +1,7 @@
 import sqlite3
 import random
 from bikeRental import BikeRental, Customer
+from os import system, name, path
 from time import sleep
 from dbmanager import createdb, adduser, login, cu
 
